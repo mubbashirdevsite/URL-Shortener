@@ -1,0 +1,479 @@
+/* ==========================================
+   File: style.css
+   Project: URL Shortener
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= Variables ================= */
+
+:root{
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+    --info:#06b6d4;
+
+    --white:#ffffff;
+    --text:#f8fafc;
+    --muted:#cbd5e1;
+
+    --glass:rgba(255,255,255,.12);
+    --border:rgba(255,255,255,.18);
+
+    --radius:22px;
+
+    --shadow:
+        0 20px 40px rgba(0,0,0,.25);
+
+    --transition:.3s ease;
+
+}
+
+/* ================= Reset ================= */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #4338ca,
+        #7c3aed
+    );
+
+}
+
+/* ================= Container ================= */
+
+.container{
+
+    width:100%;
+    max-width:760px;
+
+}
+
+/* ================= Card ================= */
+
+.card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeIn .6s ease;
+
+}
+
+header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    color:var(--white);
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:var(--muted);
+
+}
+
+/* ================= Input ================= */
+
+.input-group{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    color:var(--white);
+
+    font-weight:600;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:var(--transition);
+
+}
+
+input:focus{
+
+    box-shadow:
+        0 0 0 3px rgba(99,102,241,.35);
+
+}
+
+/* ================= Buttons ================= */
+
+.button-group{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px;
+
+    color:white;
+
+    font-weight:600;
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#shortenBtn{
+
+    background:var(--primary);
+
+}
+
+#shortenBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.secondary{
+
+    background:var(--info);
+
+}
+
+.success{
+
+    background:var(--success);
+
+}
+
+.danger{
+
+    background:var(--danger);
+
+}
+
+.small{
+
+    padding:10px 16px;
+
+    font-size:14px;
+
+}
+
+/* ================= Loader ================= */
+
+.loader{
+
+    width:50px;
+    height:50px;
+
+    margin:25px auto;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.25);
+
+    border-top:5px solid white;
+
+    animation:spin .8s linear infinite;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ================= Messages ================= */
+
+.message{
+
+    min-height:24px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#fde68a;
+
+}
+
+/* ================= Result ================= */
+
+.result{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+.result label{
+
+    color:var(--white);
+
+    font-weight:600;
+
+}
+
+/* ================= History ================= */
+
+.history{
+
+    margin-top:20px;
+
+}
+
+.history-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.history-header h2{
+
+    color:var(--white);
+
+    font-size:20px;
+
+}
+
+#historyList{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+#historyList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    animation:fadeIn .3s ease;
+
+}
+
+.history-link{
+
+    flex:1;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+.delete-btn{
+
+    background:var(--danger);
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    transition:var(--transition);
+
+}
+
+.delete-btn:hover{
+
+    opacity:.9;
+
+}
+
+/* ================= Animations ================= */
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:768px){
+
+    .button-group{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    .button-group{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .history-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+
+    }
+
+    #historyList li{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}

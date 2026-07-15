@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <header>
+                <h1>🔗 URL Shortener</h1>
+
+                <p class="subtitle">
+                    Convert long URLs into short, shareable links instantly.
+                </p>
+            </header>
+
+            <!-- URL Input -->
+
+            <div class="input-group">
+
+                <label for="longUrl">
+                    Enter Long URL
+                </label>
+
+                <input
+                    type="url"
+                    id="longUrl"
+                    placeholder="https://example.com">
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="button-group">
+
+                <button id="shortenBtn">
+                    Shorten URL
+                </button>
+
+                <button
+                    id="copyBtn"
+                    class="secondary">
+
+                    Copy
+
+                </button>
+
+                <button
+                    id="openBtn"
+                    class="success">
+
+                    Open
+
+                </button>
+
+                <button
+                    id="clearBtn"
+                    class="danger">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+            <!-- Loading -->
+
+            <div
+                id="loader"
+                class="loader hidden">
+
+            </div>
+
+            <!-- Notifications -->
+
+            <p
+                id="message"
+                class="message">
+
+            </p>
+
+            <!-- Result -->
+
+            <section
+                class="result">
+
+                <label>
+
+                    Short URL
+
+                </label>
+
+                <input
+                    type="text"
+                    id="shortUrl"
+                    readonly
+                    placeholder="Your shortened URL will appear here">
+
+            </section>
+
+            <!-- History -->
+
+            <section class="history">
+
+                <div class="history-header">
+
+                    <h2>Recent Links</h2>
+
+                    <button
+                        id="clearHistory"
+                        class="danger small">
+
+                        Clear All
+
+                    </button>
+
+                </div>
+
+                <ul id="historyList">
+
+                    <!-- History Items -->
+
+                </ul>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
